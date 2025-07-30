@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>云服务器管理中心</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Microsoft YaHei', sans-serif;
+        }
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #fff;
+            color: #1a237e;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin: 10px;
+        }
+        .btn:hover {
+            background-color: #f0f0f0;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        .feature-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        .feature-title {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #1a237e;
+        }
+        footer {
+            margin-top: 80px;
+            text-align: center;
+            padding: 30px;
+            background-color: #1a237e;
+            color: white;
+        }
+        .login-section {
+            text-align: center;
+            margin: 60px 0;
+            padding: 40px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .login-section h2 {
+            margin-bottom: 20px;
+            color: #1a237e;
+        }
+        .services {
+            margin-top: 50px;
+        }
+        .services h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #1a237e;
+        }
+        .service-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .service-item {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .service-item h3 {
+            color: #1a237e;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>云服务器管理中心</h1>
+            <p class="subtitle">高性能、安全稳定的云服务解决方案</p>
+            <a href="#services" class="btn">了解服务</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="features">
+            <div class="feature-card">
+                <h3 class="feature-title">高性能服务器</h3>
+                <p>采用最新硬件配置，提供卓越的计算性能和稳定的网络连接，满足各类业务需求。</p>
+            </div>
+            <div class="feature-card">
+                <h3 class="feature-title">全球加速网络</h3>
+                <p>多节点分布式部署，智能路由技术，为您的应用提供全球范围内的快速访问体验。</p>
+            </div>
+            <div class="feature-card">
+                <h3 class="feature-title">安全防护系统</h3>
+                <p>多层次安全架构，防DDoS攻击，数据加密传输，保障您的业务安全稳定运行。</p>
+            </div>
+        </div>
+
+        <div class="services" id="services">
+            <h2>我们的服务</h2>
+            <div class="service-list">
+                <div class="service-item">
+                    <h3>云服务器</h3>
+                    <p>高性能、可扩展的云计算资源，满足各类应用场景需求。</p>
+                </div>
+                <div class="service-item">
+                    <h3>数据存储</h3>
+                    <p>安全可靠的数据存储解决方案，支持多种备份和恢复策略。</p>
+                </div>
+                <div class="service-item">
+                    <h3>网络加速</h3>
+                    <p>全球分布式网络节点，提供稳定快速的网络访问体验。</p>
+                </div>
+                <div class="service-item">
+                    <h3>安全防护</h3>
+                    <p>全方位安全防护服务，保障您的业务安全稳定运行。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="login-section">
+            <h2>服务器状态</h2>
+            <p>当前服务器运行正常，系统负载稳定</p>
+            <a href="#contact" class="btn">联系我们</a>
+        </div>
+    </div>
+
+    <footer id="contact">
+        <div class="container">
+            <p>Copyright © 2023-2024 云服务器管理中心 | 技术支持与定制开发</p>
+        </div>
+    </footer>
+</body>
+</html> 

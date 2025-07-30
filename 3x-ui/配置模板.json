@@ -1,0 +1,74 @@
+{
+  "log": {
+    "access": "./access.log",
+    "error": "./error.log",
+    "loglevel": "warning"
+  },
+  "inbounds": [
+    {
+      "port": 10086,
+      "protocol": "vless",
+      "settings": {
+        "clients": [
+          {
+            "id": "UUID将由面板自动生成",
+            "flow": "xtls-rprx-vision"
+          }
+        ],
+        "decryption": "none"
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "security": "reality",
+        "realitySettings": {
+          "show": false,
+          "dest": "www.microsoft.com:443",
+          "xver": 0,
+          "serverNames": [
+            "www.microsoft.com",
+            "www.microsoft.cn",
+            "www.bing.com"
+          ],
+          "privateKey": "私钥将由面板自动生成",
+          "minClientVer": "",
+          "maxClientVer": "",
+          "maxTimeDiff": 0,
+          "shortIds": [
+            "",
+            "0123456789abcdef"
+          ]
+        }
+      },
+      "sniffing": {
+        "enabled": true,
+        "destOverride": [
+          "http",
+          "tls",
+          "quic"
+        ]
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol": "freedom",
+      "settings": {}
+    },
+    {
+      "protocol": "blackhole",
+      "settings": {},
+      "tag": "blocked"
+    }
+  ],
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "ip": [
+          "geoip:private"
+        ],
+        "outboundTag": "blocked"
+      }
+    ]
+  }
+} 
