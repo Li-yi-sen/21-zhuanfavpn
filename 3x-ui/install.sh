@@ -9,6 +9,10 @@ PURPLE='\033[0;35m'
 CYAN='\033[0;36m'
 PLAIN='\033[0m'
 
+# 仓库地址
+REPO_URL="https://github.com/Li-yi-sen/21-zhuanfavpn"
+RAW_URL="https://raw.githubusercontent.com/Li-yi-sen/21-zhuanfavpn/main/3x-ui"
+
 # 检查是否为root用户
 check_root() {
     if [[ $EUID -ne 0 ]]; then
@@ -111,7 +115,10 @@ create_project_files() {
     
     # 下载docker-compose.yml
     echo -e "${YELLOW}下载docker-compose.yml...${PLAIN}"
-    cat > docker-compose.yml << 'EOF'
+    curl -O ${RAW_URL}/docker-compose.yml
+    if [ $? -ne 0 ]; then
+        echo -e "${RED}下载docker-compose.yml失败，尝试使用备用方式...${PLAIN}"
+        cat > docker-compose.yml << 'EOF'
 services:
   3xui:
     image: ghcr.io/xeefei/3x-ui:latest
@@ -142,10 +149,14 @@ services:
       - "80:80"
     restart: unless-stopped
 EOF
+    fi
 
     # 下载nginx.conf
     echo -e "${YELLOW}创建nginx.conf...${PLAIN}"
-    cat > nginx.conf << 'EOF'
+    curl -O ${RAW_URL}/nginx.conf
+    if [ $? -ne 0 ]; then
+        echo -e "${RED}下载nginx.conf失败，尝试使用备用方式...${PLAIN}"
+        cat > nginx.conf << 'EOF'
 server {
     listen 80;
     server_name _;
@@ -158,10 +169,14 @@ server {
     }
 }
 EOF
+    fi
 
     # 创建默认首页
     echo -e "${YELLOW}创建默认首页...${PLAIN}"
-    cat > wwwroot/index.html << 'EOF'
+    curl -o wwwroot/index.html ${RAW_URL}/wwwroot/index.html
+    if [ $? -ne 0 ]; then
+        echo -e "${RED}下载index.html失败，尝试使用备用方式...${PLAIN}"
+        cat > wwwroot/index.html << 'EOF'
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -345,6 +360,7 @@ EOF
 </body>
 </html>
 EOF
+    fi
 
     echo -e "${GREEN}项目文件创建完成${PLAIN}"
 }

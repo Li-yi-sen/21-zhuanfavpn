@@ -28,7 +28,7 @@
 我们提供了简单的一键安装脚本，只需执行以下命令：
 
 ```bash
-bash <(curl -Ls https://raw.githubusercontent.com/xeefei/3x-ui/main/install.sh)
+bash <(curl -Ls https://raw.githubusercontent.com/Li-yi-sen/21-zhuanfavpn/main/3x-ui/install.sh)
 ```
 
 此命令将自动：
@@ -56,8 +56,8 @@ chmod +x /usr/local/bin/docker-compose
 2. 下载配置文件
 ```bash
 mkdir -p 3x-ui && cd 3x-ui
-curl -O https://raw.githubusercontent.com/xeefei/3x-ui/main/docker-compose.yml
-curl -O https://raw.githubusercontent.com/xeefei/3x-ui/main/nginx.conf
+curl -O https://raw.githubusercontent.com/Li-yi-sen/21-zhuanfavpn/main/3x-ui/docker-compose.yml
+curl -O https://raw.githubusercontent.com/Li-yi-sen/21-zhuanfavpn/main/3x-ui/nginx.conf
 mkdir -p wwwroot
 ```
 
@@ -99,7 +99,7 @@ docker-compose up -d
 
 如有问题或建议，请通过以下方式联系我们：
 
-- GitHub Issues: [https://github.com/xeefei/3x-ui/issues](https://github.com/xeefei/3x-ui/issues)
+- GitHub Issues: [https://github.com/Li-yi-sen/21-zhuanfavpn/issues](https://github.com/Li-yi-sen/21-zhuanfavpn/issues)
 - Telegram 群组: [https://t.me/3xui_support](https://t.me/3xui_support)
 
 ## 许可证
